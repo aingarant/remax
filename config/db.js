@@ -13,24 +13,24 @@ const db = new Client({
 db.connect();
 
 
-// db.connect()
-//   .then(() => console.log("connected to DB"))
-//   .catch((e) => console.log(`Error connecting to Postgres server:\n${e}`));
+db.connect()
+  .then(() => console.log("connected to DB"))
+  .catch((e) => console.log(`Error connecting to Postgres server:\n${e}`));
 
-// const create = fs.readFileSync("config/schema/create.sql", { encoding: "utf8" });
-// const seed = fs.readFileSync("config/schema/seed.sql", { encoding: "utf8" });
+const create = fs.readFileSync("config/schema/create.sql", { encoding: "utf8" });
+const seed = fs.readFileSync("config/schema/seed.sql", { encoding: "utf8" });
 
-// db.query(create)
-//   .then(() => console.log("Tables Reloaded"))
-//   .then(() => db.query(seed))
-//   .then(() => console.log("DB Seeded"))
-//   .then(() => {
-//     const testing = db.query("SELECT * from banks");
-//     return testing;
-//   })
-//   .then((testing) => console.log("testing", testing.rows))
-//   .catch((e) => {
-//     console.log(e.message);
-//   });
+db.query(create)
+  .then(() => console.log("Tables Reloaded"))
+  .then(() => db.query(seed))
+  .then(() => console.log("DB Seeded"))
+  .then(() => {
+    const testing = db.query("SELECT * from banks");
+    return testing;
+  })
+  .then((testing) => console.log("testing", testing.rows))
+  .catch((e) => {
+    console.log(e.message);
+  });
 
 module.exports = db;

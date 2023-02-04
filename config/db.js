@@ -10,7 +10,7 @@ const db = new Client({
   database: process.env.DB_NAME,
 });
 
-db.connect();
+
 
 
 db.connect()

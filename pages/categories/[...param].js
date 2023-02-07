@@ -34,22 +34,6 @@ const Category = ({ categories }) => {
         ))}
       </div>
 
-      {/* <div className="card-list grid grid-cols-1 gap-10 m-10">
-        {categories.map((card) => (
-          <div className="p-6 rounded-lg shadow-md" key={card.id}>
-            <Link href="/cards/[id]" as={`/cards/${card.id}`}>
-            <CardItem card={card} />
-              <div className="mt-5 text-sm font-medium">{card.name}</div>
-              <div className="mt-2 text-sm text-gray-600">
-                Interest Rate: {card.interest_rate}%
-              </div>
-              <div className="mt-2 text-sm text-gray-600">
-                Annual Fee: ${card.annual_fee}
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div> */}
     </section>
   );
 };

@@ -6,7 +6,7 @@ const Vendor = () => {
   const { param } = router.query
   
   return (
-    <div>{param}</div>
+    <div>{param} show which card will benefit them the most while shopping there</div>
   )
 }
 

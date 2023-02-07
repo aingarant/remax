@@ -58,12 +58,21 @@ const getAllCashback = () => {
     .then((data) => data.rows)
     .catch((err) => err.message);
 };
+const getCashbackByID = (id) => {
+  return db
+    .query(
+      "SELECT categories.name as category, reward_rate as Cashback, cards.name , cards.img_url , cards.interest_rate , cards.annual_fee from rewards JOIN categories on category_id=categories.id JOIN cards on card_id=cards.id WHERE card_id = $1 ORDER BY Cashback DESC;", [id]
+    )
+    .then((data) => data.rows)
+    .catch((err) => err.message);
+};
 
 module.exports = {
   getBanks,
   getCategoriesByCardID,
   getCategoriesByID,
   getAllCashback,
+  getCashbackByID,
   getCategories,
   getFeaturedCategories,
   getFeaturedVendors,

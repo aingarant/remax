@@ -31,6 +31,7 @@ export default function home({ featured_cards, featured_vendors, categories }) {
           <div className="vendor-list grid grid-cols-4 gap-40 place-items-center m-20">
             {featured_vendors.map((vendor) => (
               <Link href={vendor.relative_link} key={vendor.id}>
+                {console.log(vendor)}
                 <VendorItem vendor={vendor} />
               </Link>
             ))}
